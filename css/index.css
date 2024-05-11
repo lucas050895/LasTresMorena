@@ -1,0 +1,212 @@
+@import url(general.css);
+
+
+/*SECCION DE SLIDER DE ARTICULOS*/
+main > section:nth-child(1){
+    width: 100%;
+    overflow: hidden;
+}
+.slider-contenedor{
+    width: 100%;
+    display: flex;
+}
+.contenido-slider{
+    width: 100%;
+    height: 60vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-shrink: 0;
+    background: #c3c3c3;
+}
+.contenido-slider > div:nth-child(1){
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido-slider > div:nth-child(2){
+    width: 100%;
+    height: 20%;
+    background: #611a68;
+}
+.contenido-slider a{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #c3c3c3;
+}
+
+
+/*SECCION DE RUBROS*/
+main > #rubros{
+    width: 100%;
+}
+main > #rubros > ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2em auto;
+}
+main > #rubros > ul > li{
+    width: 100px;
+    height: 100px;
+    margin: 1em .5em;
+    
+    list-style:none;
+}
+main > #rubros > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: tan;
+    padding-bottom: .5em;
+}
+
+
+/*GALERIA DE PRODUCTOS*/
+main > #productos > section > div{
+    position: relative;
+}
+main > #productos > section > div > div{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+main > #productos > section > div > div i{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 3em;
+}
+main > #productos > section{
+    width: 100%;
+    margin: 3em auto;
+}
+main > #productos > section > h2{
+    font: 2em var(--font-primary);
+}
+main > #productos > section  ul{
+    width: 100%;
+    height: 200px;
+    padding: 0 2em;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+main > #productos > section ul::-webkit-scrollbar{
+    display: none;
+}
+main > #productos > section  ul li{
+    width: 200px;
+    height: 100%;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+    margin: 0 2em;
+    border: 1px solid black;
+    list-style-type: none;
+}
+main > #productos > section  ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+main > #productos > section  ul li a img{
+    width: 100%;
+    height: 130px;
+}
+main > #productos > section ul li a h2{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+    bottom: 0;
+}
+main > #productos > section ul li h2::before{
+    content: '$ ';
+}
+/*ULTIMO LI - VER MAS -*/
+main > #productos > section  ul li:nth-last-child(1){
+    width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+main > #productos > section ul li:nth-last-child(1) button{
+    width: 100%;
+    height: 30px;
+    text-transform: uppercase;
+}
+main > #productos > section ul li:nth-last-child(1) a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*SECCION DE SLIDER PUBLICITARIO*/
+.cont-princ-slider {
+    height: 100px;
+    overflow: hidden;
+    width: 70vw;
+    margin: auto;
+  }
+  
+  .slier-prin {
+    display: inline-flex;
+    -moz-animation: slider 5s infinite linear;
+    -webkit-animation: slider 5s infinite linear;
+    animation: slider 5s infinite linear;
+    height: 100%;
+    width: auto;
+  }
+  
+  .juegos_DWG {
+    background: #CCC;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 100px;
+    height: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+    width: 150px;
+  }
+  
+  @keyframes slider {
+    to {
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
