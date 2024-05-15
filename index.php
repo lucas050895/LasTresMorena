@@ -3,25 +3,24 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> 
     <!-- CHARSET -->
     <meta charset="UTF-8">
     <!-- IE-EDGE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- DESCRIPCION -->
-    <meta name="description" content="Sitio web de articulos y accesorio de pesca">
-    <!-- AUTOR -->
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Sitio web de artículos y accesorios de pesca.">
+    <!-- AUTHOR -->
     <meta name="author" content="Lucas Conde">
-    <!-- TITULO -->
+    <!-- TITTLE -->
     <title>Las Tres Morenas</title>
-
-
+    <!-- STYLES -->
     <link rel="stylesheet" href="css/index.css">
-
+    <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/439ee37b3b.js" crossorigin="anonymous"></script>
-</head>
+    </head>
 <body>
 
     <?php
@@ -29,15 +28,14 @@
     ?>
 
     <main>
-        <section>
+        <div id="ofertas">
             <div class="slider-contenedor">
                 <?php
                     if($conexion) {
                         $consultation = "SELECT *
                                             FROM articulos
-                                            WHERE foto LIKE '%descarga%'
                                             GROUP BY (proveedor)
-                                            LIMIT 10";
+                                            LIMIT 4";
                         $resultado = mysqli_query($conexion,$consultation);
                 
                         if($resultado){
@@ -61,17 +59,21 @@
                     }
                 ?>
             </div>
-        </section>
+        </div>
         
         <div id="productos">
             <section>
-                <h2>Cañas</h2>
+                <h2>
+                    <a href="#">
+                        Cañas
+                    </a>
+                </h2>
                 <div>
                     <div>
-                        <i class="fas fa-chevron-circle-left"></i>
-                        <i class="fas fa-chevron-circle-right"></i>
+                        <i class="fas fa-chevron-circle-left caña-left"></i>
+                        <i class="fas fa-chevron-circle-right caña-right"></i>
                     </div>
-                    <ul class="scroll">
+                    <ul class="scroll-caña">
                         <?php
                             if($conexion) {
                                 $consultation = "SELECT *
@@ -109,13 +111,17 @@
             </section>
             
             <section>
-                <h2>Reel</h2>
+                <h2>
+                    <a href="#">
+                        Reel
+                    </a>
+                </h2>
                 <div>
                     <div>
-                        <i class="fas fa-chevron-circle-left"></i>
-                        <i class="fas fa-chevron-circle-right"></i>
+                        <i class="fas fa-chevron-circle-left reel-left"></i>
+                        <i class="fas fa-chevron-circle-right reel-right"></i>
                     </div>
-                    <ul class="scroll">
+                    <ul class="scroll-reel">
                         <?php
                             if($conexion) {
                                 $consultation = "SELECT *
@@ -153,13 +159,17 @@
             </section>
             
             <section>
-                <h2>Ancla</h2>
+                <h2>
+                    <a href="#">
+                        Anclas
+                    </a>
+                </h2>
                 <div>
                     <div>
-                        <i class="fas fa-chevron-circle-left"></i>
-                        <i class="fas fa-chevron-circle-right"></i>
+                        <i class="fas fa-chevron-circle-left ancla-left"></i>
+                        <i class="fas fa-chevron-circle-right ancla-right"></i>
                     </div>
-                    <ul class="scroll">
+                    <ul class="scroll-ancla">
                         <?php
                             if($conexion) {
                                 $consultation = "SELECT *
@@ -186,7 +196,7 @@
                                     }
                                 }
                             }
-                            ?>
+                        ?>
                         <li>
                             <button>
                                 <a href="#"> Ver mas</a>
@@ -210,7 +220,7 @@
                                 $descripcion = $row['descripcion'];
                 
                                 ?>
-                                    <li>
+                                    <li style="background-image: url(resource/ <?php $foto ?>);">
                                         <a href="#"> <?php echo $descripcion ?></a>
                                     </li>
                                 <?php
@@ -221,36 +231,78 @@
             </ul>
         </div>
 
-        <article class="cont-princ-slider">
-                <div class="slier-prin">
-                    <div class="juegos_DWG">01</div>
-                    <div class="juegos_DWG">02</div>
-                    <div class="juegos_DWG">03</div>
-                    <div class="juegos_DWG">04</div>
-                    <div class="juegos_DWG">05</div>
-                    <div class="juegos_DWG">06</div>
+        <div id="publicidad">
+            <div class="move">
+                <div class="box">
+                    <img src="resource/1.png" alt="">
                 </div>
-        </article>
+                <div class="box">
+                    <img src="resource/2.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/3.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/4.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/5.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/6.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/7.png" alt="">
+                </div>
+
+                <!-- 2da vuelta -->
+                <div class="box">
+                    <img src="resource/1.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/2.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/3.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/4.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/5.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/6.png" alt="">
+                </div>
+                <div class="box">
+                    <img src="resource/7.png" alt="">
+                </div>
+            </div>
+        </div>
+
     </main>
 
 
     <footer>
-        <div>
-            <a href="#">
-                <i class="fab fa-facebook"></i>
-            </a>
+        <div class="redes">
+            <p>Comunicate con nosotros</p>
+            <div>
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                </a>
 
-            <a href="#">
-                <i class="fab fa-instagram-square"></i>
-            </a>
+                <a href="#">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
 
-            <a href="tel:123456">
-                <i class="fas fa-phone-alt"></i>
-            </a>
+                <a href="tel:123456">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
 
-            <a href="#">
-                <i class="fas fa-envelope"></i>
-            </a>
+                <a href="#">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
         <div>
             <h2>
@@ -263,7 +315,7 @@
         </div>
     </footer>
 
-    <a href="#">
+    <a href="https://wa.me/5491154768998">
         <i class="fab fa-whatsapp"></i>
     </a>
 
