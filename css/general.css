@@ -5,10 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 14px;
+    color: black;
 }
 
 :root{
     --font-primary: "Noto Sans Display";
+
+    --color-one:#0E4F96;
+    --color-two:#4495EE;
+    --color-three:#F8F8F8;
 }
 
 /*HEADER*/
@@ -82,6 +87,7 @@ header > nav{
 	-webkit-transform:translateY(200%) rotate(45deg);
 	-ms-transform:translateY(200%) rotate(45deg);
 	transform:translateY(200%) rotate(45deg);
+    background: var(--color-three);
 }
 .hamburger.is-active .-mid{
 	opacity:0;
@@ -89,17 +95,25 @@ header > nav{
 .hamburger.is-active .-bottom{
 	-webkit-transform:translateY(-200%) rotate(135deg);
 	-ms-transform:translateY(-200%) rotate(135deg)  ;
-	transform:translateY(-200%) rotate(135deg)  
+	transform:translateY(-200%) rotate(135deg);
+    background: var(--color-three);
 }
 .menuppal.is_active{
     transform: translate3d(0px, 0px, 0px);
+}
+.hamburger.is-active{
+    width: 25px;
+    height: 25px;
+    background: red;
+    border-radius: 200px;
 }
 /*CONTENEDOR DE LOS LINKS DEL MENU*/
 .menuppal{
     width: 100%;
     height: 100%;
-    padding-top: 80px ;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--color-one);
+    padding-left: 1em;
+    padding-top: 3em;
     bottom: 0;
     left: 0;
     top: 0;
@@ -109,66 +123,83 @@ header > nav{
     transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     z-index: 1001;
 }
-.menuppal ul{
-    margin:0;
-    padding:0;
+.menuppal > ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.menuppal ul li {
-    width: 100%;
+.menuppal > ul > li {
+    width: 90%;
+    max-width: 300px;
 	height:80px;
-    margin-top: .5em;
-    padding-left: 2em;
+    margin-left: 2em;
+    padding-left: .5em;
     display: flex;
     align-items: center;
     list-style: none;
 	text-align:left;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	text-transform:none;
 }
-/*ITEMS DEL MENU*/
-.menuppal ul li a{
-    font-size: 1.5em;
-    text-decoration:none;
-    color: black;
-    margin-left: .55em;
-}
-/*ICONOS DE CADA LISTA DEL MENU*/
-.menuppal  i{
-    width: 80px;
-    font-size: 2em
-}
-/*FORMULARIO DE BUSQUEDA EN EL MENU*/
-.menuppal ul #ocultar form{
-    width: 100%;
-    height: 80px;
+.menuppal > ul > li:nth-child(2){
+    height: auto;
     display: flex;
     flex-direction: column;
+}
+.menuppal > ul > li > ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    padding: 1em 0;
 }
-.menuppal ul #ocultar form > input:nth-child(1){
-    width: 90%;
-    height: 50%;
-    margin: auto;
+.menuppal > ul > li > ul > li{
+    width: 120px;
+    height: 50px;
+    margin: 1em auto;
+    list-style: none;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border: 3px solid black;
+    background: black;
 }
-.menuppal ul #ocultar form > input:nth-child(2){
-    width: 50%;
-    height: 20%;
-    margin: auto;
-}
+.menuppal > ul > li > ul > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .3em;
+    border: 1px solid black;
+    background: var(--color-two);
+    color: var(--color-three);
+} 
 
+/*ITEMS DEL MENU*/
+.menuppal ul > li > a{
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration:none;
+    color: var(--color-three);
+}
+ul li i{
+    font-size: 1em;
+    margin: 0 .2em;
+    color: var(--color-three);
+}
 
 
 /*LOGO O TITULO*/
 header > div h1{
-    width: 250px;
     text-align: center;
-    font-family: var(--font-primary);
-    font-size: 2.1em;
+    font: 2rem var(--font-primary)
 }
 
 
 
-/*ICONO DEL CARRITO DE COMPRAS*/
+/*ICONO DE BUSQUEDA*/
 header > div:nth-child(3) {
     width: 70px;
     height: 80px;
@@ -179,36 +210,138 @@ header > div:nth-child(3) {
 header > div > i{
     font-size: 2em;
 }
-
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;  
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+.modal {
+    width: 90vw;
+    height: 450px;
+    padding: 30px 50px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+#close{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: transparent;
+}
+#close > i{
+    font-size: 3em;
+    cursor: pointer;
+}
+.modal > form{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.modal > form label{
+    width: 100%;
+    font-size: 2em;
+}
+.modal > form input:nth-child(2){
+    width: 100%;
+    height: 30px;
+    padding: 0 .5em;
+    border: 2px solid black;
+}
+.modal > form input:nth-child(3){
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
 
 
 /*PIE DE PAGINA*/
 footer{
     width: 100%;
-    height: 250px;
+    height: 200px;
 }
-footer > div:nth-child(1){
+footer > .redes{
     width: 100%;
     height: 70%;
-    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+footer > .redes > p{
+    width: 90%;
+    padding-bottom: .2em;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+footer > .redes > div{
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-footer > div:nth-child(1) > a{
+footer > .redes > div > a{
     text-decoration: none;
 }
-footer > div:nth-child(1) > a i{
+footer > .redes div > a i{
     margin: 0 .5em;
     font-size: 3em;
-    color: white;
 }
+/*COLOR DE CADA ICONO DE CONTACTO*/
+.fa-facebook{
+    color: #0000ff;
+}
+.fa-instagram-square{
+    color: #bc1888;
+}
+.fa-phone-alt{
+    color: #5270FF ;
+}
+.fa-envelope{
+    color: #E04005
+}
+/*DERECHOS RESERVADOS*/
 footer > div:nth-child(2){
     width: 100%;
     height: 30%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2em;
+    background: black;
 }
-footer > div:nth-child(2) > h2{
-    height: 50%;
-    font-size: 2em;
+footer > div:nth-child(2) > h2,
+footer > div:nth-child(2) > p,
+footer > div:nth-child(2) > p > i{
+    color: white;
+}
+
+
+@media screen and (min-width: 720px) {
+    .modal {
+        width: 320px;
+    }
 }
