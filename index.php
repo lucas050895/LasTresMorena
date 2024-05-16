@@ -35,7 +35,7 @@
                         $consultation = "SELECT *
                                             FROM articulos
                                             GROUP BY (proveedor)
-                                            LIMIT 4";
+                                            LIMIT 10";
                         $resultado = mysqli_query($conexion,$consultation);
                 
                         if($resultado){
@@ -76,7 +76,7 @@
                     <ul class="scroll-caña">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT *
+                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
                                                     FROM articulos
                                                     WHERE descripcion LIKE 'caña%'
                                                     LIMIT 10";
@@ -92,8 +92,12 @@
                                             <li>
                                                 <a href="#">
                                                     <img src="<?php echo $foto ?>" alt="foto">
-                                                    <?php echo $descripcion ?>
-                                                    <h2><?php echo $precio ?></h2>
+                                                    <p>
+                                                        <?php echo $descripcion ?>
+                                                    </p>
+                                                    <h2> 
+                                                        <?php echo $precio ?>
+                                                    </h2>
                                                 </a>
                                             </li>
                                             <?php
@@ -124,7 +128,7 @@
                     <ul class="scroll-reel">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT *
+                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
                                                     FROM articulos
                                                     WHERE descripcion LIKE 'reel%'
                                                     LIMIT 10";
@@ -140,8 +144,12 @@
                                             <li>
                                                 <a href="#">
                                                     <img src="<?php echo $foto ?>" alt="foto">
-                                                    <?php echo $descripcion ?>
-                                                    <h2><?php echo $precio ?></h2>
+                                                    <p>
+                                                        <?php echo $descripcion ?>
+                                                    </p>
+                                                    <h2> 
+                                                        <?php echo $precio ?>
+                                                    </h2>
                                                 </a>
                                             </li>
                                         <?php
@@ -172,7 +180,7 @@
                     <ul class="scroll-ancla">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT *
+                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
                                                     FROM articulos
                                                     WHERE descripcion LIKE 'ancla%'
                                                     LIMIT 10";
@@ -188,8 +196,12 @@
                                             <li>
                                                 <a href="#">
                                                     <img src="<?php echo $foto ?>" alt="foto">
-                                                    <?php echo $descripcion ?>
-                                                    <h2><?php echo $precio ?></h2>
+                                                    <p>
+                                                        <?php echo $descripcion ?>
+                                                    </p>
+                                                    <h2> 
+                                                        <?php echo $precio ?>
+                                                    </h2>
                                                 </a>
                                             </li>
                                             <?php

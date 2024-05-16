@@ -1,3 +1,6 @@
+<!-- <?php
+    include('../bd/conecxion.php');
+?> -->
 <header>
     <nav>
         <div class="hamburger">
@@ -7,34 +10,70 @@
         </div>
         <div class="menuppal">
             <ul>
-                <li id="ocultar">
-                    <i class="fas fa-search"></i>
-                    <form action="links/busqueda.php" method="post">
-                        <input type="text" name="buscar" placeholder="Busqueda de Articulos">
-                        <input type="submit" value="Buscar">
-                    </form>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        Inicio
+                    </a>
                 </li>
                 <li>
-                    <i class="fas fa-home"></i>
-                    <a href="#">Inicio</a>
+                    <a href="#">
+                        <i class="fas fa-list"></i>
+                        Rubros
+                    </a>
+                    <ul>
+                        <?php
+                            if($conexion) {
+                                $consultation = "SELECT *
+                                                    FROM familias";
+                                $resultado = mysqli_query($conexion,$consultation);
+                                
+                                if($resultado){
+                                    while($row = $resultado->fetch_array()){
+                                        $descripcion = $row['descripcion'];
+                                        
+                                        ?>
+                                            <li>
+                                                <a href="#">
+                                                    <?php echo $descripcion ?>
+                                                </a>
+                                            </li>
+                                        <?php
+                                    }
+                                }
+                            }
+                        ?>
+                    </ul>
                 </li>
                 <li>
-                    <i class="fas fa-list"></i>
-                    <a href="#">Rubros</a>
-                </li>
-                <li>
-                    <i class="fas fa-address-card"></i>
-                    <a href="#">Sobre Nosotros</a>
+                    <a href="#">
+                        <i class="fas fa-address-card"></i>
+                        Sobre Nosotros
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div>
-        <h1>Las Tres Morenas</h1>
+        <h1>Las Tres Morena</h1>
     </div>
 
-    <div>
-        <i class="fas fa-shopping-cart"></i>
+    <div id="origina_amen_1" class="busqueda">
+        <i class="fas fa-search"></i>
+    </div>
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+            <button id="close">
+                <i class="fas fa-times"></i>
+            </button>
+            <form action="links/busqueda.php" method="post">
+                <label for="buscar">Busqueda de artículos</label>
+                <input type="text" name="buscar" id="buscar" placeholder="Ejemplo: caña">
+                <input type="submit" value="Buscar">
+            </form> 
+        </div>
     </div>
 </header>
+

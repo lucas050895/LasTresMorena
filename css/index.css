@@ -19,7 +19,7 @@ main > #ofertas{
     justify-content: space-around;
     align-items: flex-end;
     flex-shrink: 0;
-    background: #c3c3c3;
+    background-color: var(--color-four);
 }
 .contenido-slider > div:nth-child(1){
     width: 100%;
@@ -31,7 +31,7 @@ main > #ofertas{
 .contenido-slider > div:nth-child(2){
     width: 100%;
     height: 20%;
-    background: var(--color-one);
+    background-color: var(--color-three);
 }
 .contenido-slider a{
     height: 80px;
@@ -66,7 +66,7 @@ main > #productos > section > div > div i{
     justify-content: center;
     z-index: 2;
     font-size: 3em;
-    background: white;
+    background-color: var(--color-four);
     border-radius: 200px;
 }
 main > #productos > section > div > div .fa-chevron-circle-left{
@@ -94,7 +94,7 @@ main > #productos > section  ul{
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
-    background: var(--color-two);
+    background-color: var(--color-one);
 }
 main > #productos > section ul::-webkit-scrollbar{
     display: none;
@@ -106,10 +106,10 @@ main > #productos > section  ul li{
     flex: 0 0 auto;
     position: relative;
     z-index: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color-six);
     border-radius: 5px;
     list-style-type: none;
-    background: var(--color-three);
+    background-color: var(--color-four);
 }
 main > #productos > section  ul li a {
     width: 100%;
@@ -117,18 +117,33 @@ main > #productos > section  ul li a {
     display: inline-flex;
     flex-direction: column;
     text-decoration: none;
+    position: relative;
 }
 main > #productos > section  ul li a img{
     width: 100%;
     height: 130px;
 }
+main > #productos > section  ul li a p{
+    height: 40px;
+    padding: 0 5px;
+    background: var(--color-five);
+}
+main > #productos > section  ul li a p::after{
+    content: ' ...';
+}
 main > #productos > section ul li a h2{
     width: 100%;
     height: 40px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5em;
-    position: relative;
+    position: absolute;
     bottom: 0;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    background: var(--color-six);
+    color: var(--color-four);
 }
 main > #productos > section ul li h2::before{
     content: '$ ';
@@ -172,6 +187,11 @@ main > #rubros > ul > li{
     height: 10rem;
     margin: 1em .5rem;
     list-style:none;
+    border-radius: 200px;
+    background-color: var(--color-three);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
 }
 main > #rubros > ul > li > a{
     width: 100%;
@@ -179,11 +199,10 @@ main > #rubros > ul > li > a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 200px;
     text-transform: uppercase;
     text-decoration: none;
-    background: #c2c2c2;
-    padding-bottom: .5em;
+    color: var(--color-four);
+    border-radius: 200px;
 }
 
 
@@ -206,7 +225,6 @@ main > #rubros > ul > li > a{
     width: calc(250px * 14);
     animation: animacion 50s linear infinite;
     margin: 1em auto;
-    background: red;
 }
 #publicidad > .move > .box {
     height: 100px;
@@ -239,7 +257,7 @@ body > a{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #25d366;
+    background-color: #25d366;
     border-radius: 200px;
     text-decoration: none;
 }

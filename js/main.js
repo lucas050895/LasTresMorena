@@ -10,12 +10,29 @@ function toggleMenu (event) {
 menu.addEventListener('click', toggleMenu, false);
 
 
+
+// VENTANA MODAL DE BUSQUEDA EN EL HEADER
+const open = document.getElementById('origina_amen_1');
+const modal_container = document.getElementById('modal_container');
+const close = document.getElementById('close');
+
+open.addEventListener('click', () => {
+    modal_container.classList.add('show');  
+});
+
+close.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+});
+
+
+
 // AGREGAR SOMBRA AL HEADER
 window.onscroll = function(){
     let fondo = document.querySelector("header");
 
     fondo.classList.toggle("sombra", window.scrollY>0);
 };
+
 
 
 //  SLIDER AUTOMATICO DE INDEX
@@ -51,38 +68,37 @@ function slides(){
 
 // SLIDER HORIZONTAL PARA PRODUCTOS EN INDEX
 
-const rightBtn = document.querySelector(".fa-chevron-circle-right");
-const leftBtn = document.querySelector(".fa-chevron-circle-left");
-const content = document.querySelector(".scroll");
+const cañaRight = document.querySelector(".caña-right");
+const cañaLeft = document.querySelector(".caña-left");
+const caña = document.querySelector(".scroll-caña");
 
-rightBtn.addEventListener("click", ()=>{
-    content.scrollLeft += 100;
-})
+cañaRight.addEventListener("click", ()=>{
+    caña.scrollLeft += 100;
+});
+cañaLeft.addEventListener("click", ()=>{
+    caña.scrollLeft -= 100;
+});
 
-leftBtn.addEventListener("click", ()=>{
-    content.scrollLeft -= 100;
-})
+const reelRight = document.querySelector(".reel-right");
+const reelLeft = document.querySelector(".reel-left");
+const reel = document.querySelector(".scroll-reel");
 
-
-
-
-
-
-
-
-
-
-
-var lucas = document.querySelector(".slier-prin");
-
-lucas.innerHTML += slider.innerHTML;
+reelRight.addEventListener("click", ()=>{
+    reel.scrollLeft += 100;
+});
+reelLeft.addEventListener("click", ()=>{
+    reel.scrollLeft -= 100;
+});
 
 
+const anclaRight = document.querySelector(".ancla-right");
+const anclaLeft = document.querySelector(".ancla-left");
+const ancla = document.querySelector(".scroll-ancla");
 
-
-
-
-
-
-
+anclaRight.addEventListener("click", ()=>{
+    ancla.scrollLeft += 100;
+});
+anclaLeft.addEventListener("click", ()=>{
+    ancla.scrollLeft -= 100;
+});
 
