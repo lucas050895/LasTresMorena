@@ -20,6 +20,8 @@
     --color-six: #2C2C2C;
 }
 
+
+
 /*HEADER*/
 header{
     width: 100%;
@@ -30,7 +32,6 @@ header{
 	position: fixed;
     z-index: 1001;
     background-color: var(--color-two);
-    /* box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75); */
 }
 /*SOMBRA Y FONDO AL SCROLL DEL HEADER*/
 .sombra{
@@ -38,259 +39,104 @@ header{
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 }
-/*CONTENEDOR DEL MENU HAMBURGUESA*/
-header > nav{
-    width: 80px;
-    height: 80px;
+
+/*CONTENEDOR DEL ICONO DE HAMBURGUESA*/
+header > nav > div {
+    width: 20%;
+    height: 70px;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-/*LINEAS DEL MENU HAMBURGUESA*/
-.hamburger{
-	width:30px;
-	height:40px;
-	position: fixed;
-	z-index:1002;
-	-webkit-transform:translate3d(0, 0, 0);
-	transform:translate3d(0, 0, 0) scale(1.5);
-	-webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	cursor:pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-._layer{
-	width:80%;
-	height:3px;
-	background: var(--color-four);
-	margin:1.5px auto;
-	border-radius:2px;
-	opacity:1;
-	-webkit-transform:translate3d(0, 0, 0);
-	transform:translate3d(0, 0, 0);
-	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-}
-/* .hamburger:hover .-top{
-	-webkit-transform:translateY(-100%);
-	-ms-transform:translateY(-100%);
-	transform:translateY(-100%);
-}
-.hamburger:hover .-bottom{
-	-webkit-transform:translateY(50%);
-	-ms-transform:translateY(100%);
-	transform:translateY(100%);
-} */
-.hamburger.is-active .-top{
-	-webkit-transform:translateY(200%) rotate(45deg);
-	-ms-transform:translateY(200%) rotate(45deg);
-	transform:translateY(200%) rotate(45deg);
-    background: var(--color-four);
-}
-.hamburger.is-active .-mid{
-	opacity:0;
-}
-.hamburger.is-active .-bottom{
-	-webkit-transform:translateY(-200%) rotate(135deg);
-	-ms-transform:translateY(-200%) rotate(135deg)  ;
-	transform:translateY(-200%) rotate(135deg);
-    background: var(--color-four);
-}
-.menuppal.is_active{
-    transform: translate3d(0px, 0px, 0px);
-}
-.hamburger.is-active{
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    background: red;
-    border-radius: 200px;
-}
-/*CONTENEDOR DE LOS LINKS DEL MENU*/
-.menuppal{
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-two);
-    padding-left: 1em;
-    padding-top: 3em;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    overflow-y: scroll;
-    position: fixed;
-    transform: translate3d(0px, -100%, 0px);
-    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-    z-index: 1001;
-}
-.menuppal > ul{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.menuppal > ul > li {
-    width: 90%;
-    max-width: 300px;
-	height:80px;
-    margin-left: 2em;
-    padding-left: .5em;
-    display: flex;
-    align-items: center;
-    list-style: none;
-	text-align:left;
-	font-size: 1.5em;
-	text-transform:none;
-}
-.menuppal > ul > li:nth-child(2){
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
-.menuppal > ul > li > ul {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1em 0;
-}
-.menuppal > ul > li > ul > li{
-    width: 120px;
-    height: 50px;
-    margin: 1em auto;
-    list-style: none;
-    border-top: 3px solid black;
-    border-left: 3px solid black;
-    border: 3px solid black;
-    background: black;
-}
-.menuppal > ul > li > ul > li > a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: .3em;
-    border: 1px solid black;
-    background: var(--color-one);
-    color: var(--color-six);
-} 
-
-/*ITEMS DEL MENU*/
-.menuppal ul > li > a{
-    width: 100%;
-    height: 50px;
-    display: inline-block;
-    font-size: 1.5em;
-    text-decoration:none;
-    color: var(--color-four);
-}
-ul li i{
-    font-size: 1em;
-    margin: 0 .2em;
-    color: var(--color-four);
-}
-
-
-/*LOGO O TITULO*/
-header > div h1{
-    text-align: center;
-    font: 2rem var(--font-primary);
-    color: var(--color-four);
-}
-
-
-
-/*ICONO DE BUSQUEDA*/
-header > div:nth-child(3) {
-    width: 70px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header > div > i{
-    font-size: 2em;
-    color: var(--color-four);
+    padding: 20px;
+    z-index: 100;
     cursor: pointer;
 }
-.modal-container{
-    width: 100vw;
+/*ICONO HAMBURGUESA*/
+header > nav > div > i{
+    font-size: 2em;
+    color: var(--color-four);
+}
+
+/*CONTENEDOR DE LOS LINKS*/
+header > nav > div:nth-child(2) {
+    width: 100%;
     height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    top: 80px;
+    transition: all 1s ease;
+    background: var(--color-two);
+}
+/*CONTENEDOR DE LA LISTA DEL MENU*/
+header > nav > div:nth-child(2) > ul{
+    width: 100%;
+    height: 100%;
+}
+header > nav div:nth-child(2) > ul > li{
+    width: 90%;
+    height: 50px;
+    margin: 2em auto;
+    list-style: none;
+}
+header > nav div:nth-child(2) > ul > li > a{
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    color: var(--color-four);
+}
+/*ICONO DEL MENU*/
+header > nav div:nth-child(2) > ul > li > a > i{
+    font-size: .7em;
+    margin-left: 10px;
+    /* transform: rotate(90deg); */
+    color: var(--color-four);
+}
+
+/*CONTENEDOR DE SUBMENU*/
+header > nav > div:nth-child(2) > ul > li .submenu{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: none;
+}
+/*AL NAV LE PUSO MENU, DE ESE NAV DERIVA AL UL */
+.activo{
+    display: block;
+}
+/*EFECTO DE MENU CERRADO*/
+.uno {
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+}
+/*EFECTO DE MENU ABIERTO*/
+.dos {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/*MENU DESKTOP*/
+.desktop{
+    display: none;
+}
+
+/*CONTENEDOR DEL LOGO*/
+header > div{
+    width: 80%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    opacity: 0;  
-    top: 0;
-    left: 0;
-    transition: opacity 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.3);
-    pointer-events: none;
 }
-.show{
-    pointer-events: auto;
-    opacity: 1;
-}
-.modal{
-    width: 90vw;
-    height: 400px;
-    padding: 40px 20px;
-    border-radius: 5px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: var(--color-two);
-    display: flex;
-    align-items: center;
-}
-#close{
-	width:30px;
-	height:30px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border: none;
-    border-radius: 200px;
-    background-color: red;
-    cursor: pointer;
-}
-#close > i{
-    font-size: 1.5em;
-    color: var(--color-four);
-}
-/*FORMULARIO DE BUSQUEDA*/
-.modal > form{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.modal > form label{
-    width: 100%;
+header > div > h1{
     font-size: 2em;
+    font-family: var(--font-primary);
     color: var(--color-four);
 }
-.modal > form input:nth-child(2){
-    width: 100%;
-    height: 50px;
-    padding: 0 .5em;
-    border: 2px solid black;
-}
-.modal > form input:nth-child(2):focus{
-    font-size: 1.5em;
-    transition: all .5s ease-in-out;
-}
-.modal > form input:nth-child(3){
-    width: 90%;
-    height: 40px;
-    margin: 0 auto;
-    border-radius: 5px;
-    border: 1px solid var(--color-six);
-    cursor: pointer;
-}
+
 
 
 /*PIE DE PAGINA*/
@@ -357,8 +203,125 @@ footer > div:nth-child(2) > p > i{
 }
 
 
+
 @media screen and (min-width: 720px) {
-    .modal {
-        width: 320px;
+    *{
+        font-size: 15px;
     }
+
+
+    /*HEADER*/
+    header {
+        width: 100%;
+        height: 200px;
+        flex-direction: column-reverse;
+        top: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*CONTENEDOR DEL LOGO*/
+    header > div:nth-child(2){
+        width: 100%;
+        text-align: center;
+    }
+    header > div > h1{
+        font-size: 3em;
+    }
+
+    /*ICONO HAMBURGUESA*/
+    header > nav > #icono{
+        display: none;
+    }
+
+    /*CONTENEDOR DEL MENU*/
+    header > nav{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*CONTENEDOR DE LA LISTA DE MENU*/
+    header > nav > .desktop{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    header > nav > .desktop > ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    header > nav > .desktop > ul > li {
+        height: 100%;
+        margin: .5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        position: relative;
+        --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+        --transform: rotate(0deg);
+    }
+    header > nav > .desktop > ul > li:hover{
+        --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        --transform: rotate(90deg);
+    }
+
+    header > nav > .desktop > ul > li > a{
+        width: 150px;
+        height: 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-four);
+    }
+    /*ICONO FLECHA DEL MENU*/
+    header > nav > .desktop > ul > li > a > i{
+        transform: var(--transform);
+        transition: transform .3s;
+        display: block;
+        margin-left: 10px;
+        color: var(--color-four);
+    }
+
+    /*SUBMENU*/
+    header > nav > .desktop > ul > li > ul{
+        width: 150px;
+        list-style: none;
+        transition:clip-path .3s;
+        clip-path: var(--clip);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: max-content;
+        transform: translateY(100%);
+        background-color: var(--color-five);
+    }
+    header > nav > .desktop > ul > li > ul > li{
+        width: 150px;
+        margin: .5em auto;
+    }
+    header > nav > .desktop > ul > li > ul > li > a{
+        width: 130px;
+        height: 30px;
+        margin: 10px;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: var(--color-six);
+    }
+    /*EFECTO HOVER*/
+    ul > li:hover{
+        background-color: var(--color-one) ;
+        transition: all .2s ease-in-out;
+    }
+
+
+    #ofertas{
+        margin-top: 200px;
+    }
+
 }

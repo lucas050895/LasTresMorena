@@ -1,28 +1,52 @@
-// MENU HAMBURGUESA
-var menu = document.querySelector('.hamburger');
-
-function toggleMenu (event) {
-    this.classList.toggle('is-active');
-    document.querySelector( ".menuppal" ).classList.toggle("is_active");
-    event.preventDefault();
-}
-
-menu.addEventListener('click', toggleMenu, false);
+let boton = document.getElementById("icono");
+let enlaces = document.getElementById("enlaces");
+let conta = 0;
 
 
+boton.addEventListener("click",function(){
+    if(conta == 0){
+        enlaces.className = ('enlaces dos');
+        conta=1;
+    }else{
+        enlaces.classList.remove('dos');
+        enlaces.className = ('enlaces uno');
+        conta = 0;
+    }
+})
 
-// VENTANA MODAL DE BUSQUEDA EN EL HEADER
-const open = document.getElementById('origina_amen_1');
-const modal_container = document.getElementById('modal_container');
-const close = document.getElementById('close');
+window.addEventListener('resize', function(){
+    if(screen.width > 750){
+        conta=0;
+        enlaces.classList.remove('dos');
+        enlaces.className = ('enlaces uno');
 
-open.addEventListener('click', () => {
-    modal_container.classList.add('show');  
-});
+    }
+})
 
-close.addEventListener('click', () => {
-    modal_container.classList.remove('show');
-});
+// window.addEventListener('click',function(e){
+//     console.log(e.target);
+//     if(cerrado==false){
+//         let span = document.querySelector('.links-header');
+//         if(e.target == span){
+//             conta=0;
+//         }
+//     }
+// });
+
+
+var menu = document.querySelectorAll('.opcion');
+
+menu.forEach(function(item){
+    item.addEventListener('click', function(i){
+        var elemento = i.target.parentNode;
+        console.log(elemento.children);
+        elemento.children[1].classList.toggle('.activo');
+    })
+})
+
+
+
+
 
 
 
