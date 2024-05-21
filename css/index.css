@@ -69,12 +69,22 @@ main > #productos > section > div > div i{
     background-color: var(--color-four);
     border-radius: 200px;
 }
+/*ICONOS DE FLECHA*/
 main > #productos > section > div > div .fa-chevron-circle-left{
     margin-left: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
 }
 main > #productos > section > div > div .fa-chevron-circle-right{
     margin-right: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
 }
+main > #productos > section > div > div .fa-chevron-circle-right:hover,
+main > #productos > section > div > div .fa-chevron-circle-left:hover{
+    transform: scale(1.2);
+}
+/*CONTENEDOR DE CADA SECCION*/
 main > #productos > section{
     width: 100%;
     margin: 3em auto;
