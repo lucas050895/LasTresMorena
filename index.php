@@ -15,7 +15,7 @@
     <!-- AUTHOR -->
     <meta name="author" content="Lucas Conde">
     <!-- TITTLE -->
-    <title>Las Tres Morenas</title>
+    <title>Las Tres Morena</title>
     <!-- STYLES -->
     <link rel="stylesheet" href="css/index.css">
     <!-- FONT AWESOME -->
@@ -23,11 +23,14 @@
     </head>
 <body>
 
-    <?php
-        include('layout/nav.php');
-    ?>
 
     <main>
+        <?php
+            include('layout/nav.php');
+        ?>
+
+
+
         <div id="ofertas">
             <div class="slider-contenedor">
                 <?php
