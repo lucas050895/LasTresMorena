@@ -10,29 +10,27 @@
         <div class="enlaces uno" id="enlaces">
             <ul>
                 <li>
-                    <a href="#">Inicio</a>
-                </li>
-
-                <li>
-                    <a href="#">Rubros
-                        <i class="fas fa-chevron-right"></i>
+                    <a href="http://192.168.1.95/LasTresMorenas/">
+                        <i class="fas fa-home"></i>Inicio
                     </a>
-
-                    <ul>
-                        <li>
-                            <a href="#">Rubro1</a>
-                            <a href="#">Rubro2</a>
-                            <a href="#">Rubro3</a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li>
-                    <a href="#">Busqueda</a>
+                    <a href="#">
+                        <i class="fas fa-list"></i>Rubros
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#">Nosotros</a>
+                    <a href="#">
+                        <i class="fas fa-search"></i>Busqueda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="far fa-address-card"></i>Nosotros
+                    </a>
                 </li>
             </ul>
         </div>
@@ -40,12 +38,16 @@
         <div class="desktop">
             <ul>
                 <li>
-                    <a href="#">Inicio</a>
+                    <a href="http://192.168.1.95/LasTresMorenas/">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
                 </li>
 
                 <li>
                     <a href="#">
-                        Rubros
+                        <i class="fas fa-list"></i>
+                        <span>Rubros</span>
                         <i class="fas fa-chevron-right"></i>
                     </a>
                     <ul>
@@ -72,17 +74,27 @@
                 </li>
 
                 <li>
-                    <a href="#">Busqueda</a>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                        <span>Busqueda</span>
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#">Nosotros</a>
+                    <a href="#">
+                        <i class="far fa-address-card"></i>
+                        <span>Nosotros</span>
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div>
-        <h1>Las Tres Morena</h1>
+        <h1>
+            <a href="http://192.168.1.95/LasTresMorenas/">
+                Las Tres Morena
+            </a>
+        </h1>
     </div>
 </header>
