@@ -1,3 +1,4 @@
+/*MENU DE NAVEGACION*/
 let boton = document.getElementById("icono");
 let enlaces = document.getElementById("enlaces");
 let conta = 0;
@@ -22,32 +23,6 @@ window.addEventListener('resize', function(){
 
     }
 })
-
-// window.addEventListener('click',function(e){
-//     console.log(e.target);
-//     if(cerrado==false){
-//         let span = document.querySelector('.links-header');
-//         if(e.target == span){
-//             conta=0;
-//         }
-//     }
-// });
-
-
-var menu = document.querySelectorAll('.opcion');
-
-menu.forEach(function(item){
-    item.addEventListener('click', function(i){
-        var elemento = i.target.parentNode;
-        console.log(elemento.children);
-        elemento.children[1].classList.toggle('.activo');
-    })
-})
-
-
-
-
-
 
 
 // AGREGAR SOMBRA AL HEADER
