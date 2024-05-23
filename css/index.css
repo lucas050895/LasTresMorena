@@ -277,12 +277,14 @@ body > a > i{
 }
 
 
-
+/*ADAPTACIONES A DISPOSITIVOS*/
 @media screen and (min-width:720px){
     *{
         font-size: 15px;
     }
 
+
+    /*PRODUCTOS*/
     main > #productos > section  ul{
         width: 90%;
         padding: 20px 2em;
@@ -293,8 +295,24 @@ body > a > i{
     main > #productos > section > div > div > i{
         display: flex;
     }
-    #publicidad {
-        width: 80vw;
+
+
+    /*OFERTAS*/
+    #ofertas{
+        margin-top: 150px;
     }
+
+    /*PUBLICIDAD*/
+    #publicidad {
+        width: 90vw;
+    }
+
 }
 
+
+
+@media screen and (min-width: 920px) {
+    *{
+        font-size: 16px;
+    }
+}
