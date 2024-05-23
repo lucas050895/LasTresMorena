@@ -9,7 +9,7 @@
     //FORMA ORIENTADA A OBJETO
     $conexion = new mysqli($server,$username,$password, $database);
     //COMPROBAR CONECXION
-    if($conexion->connect_errno){
+    if($conexion->connect_error){
         die("Fallo la conecxion:  {$conexion->connect_error}");
     };
 
