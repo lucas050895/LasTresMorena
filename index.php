@@ -34,31 +34,18 @@
         <div id="ofertas">
             <div class="slider-contenedor">
                 <?php
-                    if($conexion) {
-                        $consultation = "SELECT *
-                                            FROM articulos
-                                            GROUP BY (proveedor)
-                                            LIMIT 10";
-                        $resultado = mysqli_query($conexion,$consultation);
-                
-                        if($resultado){
-                            while($row = $resultado->fetch_array()){
-                                $codigo = $row['codigo'];
-                                $descripcion = $row['descripcion'];
-                                $foto = $row['foto'];
-                
-                                ?>
-                                    <div class="contenido-slider">
-                                        <div>
-                                            <img src="resource/<?php echo $foto ?>" alt="<?php echo $descripcion ?>">
-                                        </div>
-                                        <div>
-                                            <a href="#"> <?php echo $descripcion ?></a>
-                                        </div>
-                                    </div>
-                                <?php
-                            }
-                        }
+                    $resultado = $conexion -> query("SELECT * FROM articulos GROUP BY (proveedor) ORDER BY codigo LIMIT 10")or die($conexion -> error);
+                    while($fila = mysqli_fetch_array($resultado)){
+                        ?>
+                            <div class="contenido-slider">
+                                <div>
+                                    <img src="resource/<?php echo $fila['foto']; ?>" alt="<?php echo $fila['descripcion']; ?>">
+                                </div>
+                                <div>
+                                    <a href="links/producto.php?codigo=<?php echo $fila['codigo']; ?>"> <?php echo  $fila['descripcion'] ?></a>
+                                </div>
+                            </div>
+                        <?php
                     }
                 ?>
             </div>
@@ -79,21 +66,19 @@
                     <ul class="scroll-caña">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
-                                                    FROM articulos
-                                                    WHERE descripcion LIKE 'caña%'
-                                                    LIMIT 10";
+                                $consultation = "SELECT LEFT (descripcion, 15) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'caña%' LIMIT 10";
                                 $resultado = mysqli_query($conexion,$consultation);
                         
                                 if($resultado){
                                     while($row = $resultado->fetch_array()){
+                                        $codigo = $row['codigo'];
                                         $descripcion = $row['descripcion'];
                                         $precio = $row['precioventaunidades1'];
                                         $foto = $row['foto'];
                                         
                                         ?>
                                             <li>
-                                                <a href="#">
+                                                <a href="links/producto.php?codigo=<?php echo $row['codigo']; ?>">
                                                     <img src="<?php echo $foto ?>" alt="foto">
                                                     <p>
                                                         <?php echo $descripcion ?>
@@ -131,21 +116,19 @@
                     <ul class="scroll-reel">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
-                                                    FROM articulos
-                                                    WHERE descripcion LIKE 'reel%'
-                                                    LIMIT 10";
+                                $consultation = "SELECT LEFT (descripcion, 15) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'reel%' LIMIT 10";
                                 $resultado = mysqli_query($conexion,$consultation);
                                 
                                 if($resultado){
                                     while($row = $resultado->fetch_array()){
+                                        $codigo = $row['codigo'];
                                         $descripcion = $row['descripcion'];
                                         $precio = $row['precioventaunidades1'];
                                         $foto = $row['foto'];
                                         
                                         ?>
                                             <li>
-                                                <a href="#">
+                                                <a href="links/producto.php?codigo=<?php echo $row['codigo']; ?>">
                                                     <img src="<?php echo $foto ?>" alt="foto">
                                                     <p>
                                                         <?php echo $descripcion ?>
@@ -183,21 +166,19 @@
                     <ul class="scroll-ancla">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto
-                                                    FROM articulos
-                                                    WHERE descripcion LIKE 'ancla%'
-                                                    LIMIT 10";
+                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'ancla%'LIMIT 10";
                                 $resultado = mysqli_query($conexion,$consultation);
                                 
                                 if($resultado){
                                     while($row = $resultado->fetch_array()){
+                                        $codigo = $row['codigo'];
                                         $descripcion = $row['descripcion'];
                                         $precio = $row['precioventaunidades1'];
                                         $foto = $row['foto'];
                                         
                                         ?>
                                             <li>
-                                                <a href="#">
+                                                <a href="links/producto.php?codigo=<?php echo $row['codigo']; ?>">
                                                     <img src="<?php echo $foto ?>" alt="foto">
                                                     <p>
                                                         <?php echo $descripcion ?>
@@ -226,8 +207,7 @@
             <ul>
                 <?php
                     if($conexion) {
-                        $consultation = "SELECT *
-                                            FROM familias";
+                        $consultation = "SELECT * FROM familias";
                         $resultado = mysqli_query($conexion,$consultation);
                 
                         if($resultado){
@@ -297,38 +277,10 @@
 
     </main>
 
+    <?php
+        include('layout/footer.php');
+    ?>
 
-    <footer>
-        <div class="redes">
-            <p>Comunicate con nosotros</p>
-            <div>
-                <a href="#">
-                    <i class="fab fa-facebook"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fab fa-instagram-square"></i>
-                </a>
-
-                <a href="tel:123456">
-                    <i class="fas fa-phone-alt"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-        <div>
-            <h2>
-                Las Tres Morenas
-            </h2>
-            <p>
-                <i class="far fa-copyright"></i>
-                Todos Los Derechos reservados
-            </p>
-        </div>
-    </footer>
 
     <a href="https://wa.me/5491154768998">
         <i class="fab fa-whatsapp"></i>
