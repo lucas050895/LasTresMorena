@@ -198,6 +198,9 @@ footer > div:nth-child(2) > p > i{
 
 /*ADAPTACIONES A DISPOSITIVOS*/
 @media screen and (min-width:720px){
+    *{
+        font-size: 15px;
+    }
 
     /*HEADER*/
     header {
@@ -327,4 +330,10 @@ footer > div:nth-child(2) > p > i{
         color: var(--color-six);
     }
 
+}
+
+@media screen and (min-width: 920px) {
+    *{
+        font-size: 16px;
+    }
 }
