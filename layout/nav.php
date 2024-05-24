@@ -1,6 +1,3 @@
-<!-- <?php
-    include('../bd/conecxion.php');
-?> -->
 <header>
     <nav>
         <div id="icono">
@@ -22,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="http://192.168.1.95/LasTresMorenas/links/busqueda.php">
                         <i class="fas fa-search"></i>Busqueda
                     </a>
                 </li>
@@ -74,7 +71,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="http://192.168.1.95/LasTresMorenas/links/busqueda.php">
                         <i class="fas fa-search"></i>
                         <span>Busqueda</span>
                     </a>
