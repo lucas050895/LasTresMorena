@@ -137,6 +137,8 @@ main > #productos > section  ul li a p{
     height: 40px;
     padding: 0 5px;
     background: var(--color-five);
+    display: flex;
+    align-items: center;
 }
 main > #productos > section  ul li a p::after{
     content: ' ...';
@@ -157,6 +159,7 @@ main > #productos > section ul li a h2{
 }
 main > #productos > section ul li h2::before{
     content: '$ ';
+    margin-right: .5em;
 }
 /*ULTIMO LI - VER MAS -*/
 main > #productos > section  ul li:nth-last-child(1){
@@ -279,10 +282,6 @@ body > a > i{
 
 /*ADAPTACIONES A DISPOSITIVOS*/
 @media screen and (min-width:720px){
-    *{
-        font-size: 15px;
-    }
-
 
     /*PRODUCTOS*/
     main > #productos > section  ul{
@@ -307,12 +306,4 @@ body > a > i{
         width: 90vw;
     }
 
-}
-
-
-
-@media screen and (min-width: 920px) {
-    *{
-        font-size: 16px;
-    }
 }
