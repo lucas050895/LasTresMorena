@@ -38,7 +38,7 @@ window.onscroll = function(){
 let slider = document.querySelector(".slider-contenedor")
 let sliderIndividual = document.querySelectorAll(".contenido-slider")
 let contador = 1;
-let width = sliderIndividual[0].clientWidth;
+let width = sliderIndividual[0];
 let intervalo = 3000;
 
 window.addEventListener("resize", function(){
@@ -100,4 +100,3 @@ anclaRight.addEventListener("click", ()=>{
 anclaLeft.addEventListener("click", ()=>{
     ancla.scrollLeft -= 100;
 });
-
