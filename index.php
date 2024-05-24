@@ -209,14 +209,18 @@
                     if($conexion) {
                         $consultation = "SELECT * FROM familias";
                         $resultado = mysqli_query($conexion,$consultation);
-                
+
                         if($resultado){
                             while($row = $resultado->fetch_array()){
+                                $codigo = $row['codigo'];
                                 $descripcion = $row['descripcion'];
-                
+                                
                                 ?>
-                                    <li style="background-image: url(resource/ <?php $foto ?>);">
-                                        <a href="#"> <?php echo $descripcion ?></a>
+                                    <!-- <li style="background-image: url(resource/ <?php $foto ?>);"> -->
+                                    <li>
+                                        <a href="links/rubros.php?codigo=<?php echo $row['codigo']; ?>">
+                                            <?php echo $descripcion ?>
+                                        </a>
                                     </li>
                                 <?php
                             }
