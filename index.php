@@ -54,7 +54,7 @@
         <div id="productos">
             <section>
                 <h2>
-                    <a href="#">
+                    <a href="http://192.168.1.95/LasTresMorenas/links/familia1.php">
                         Cañas
                     </a>
                 </h2>
@@ -95,7 +95,7 @@
                         ?>
                         <li>
                             <button>
-                                <a href="#"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorenas/links/familia1.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -104,7 +104,7 @@
             
             <section>
                 <h2>
-                    <a href="#">
+                    <a href="http://192.168.1.95/LasTresMorenas/links/familia3.php">
                         Reel
                     </a>
                 </h2>
@@ -145,7 +145,7 @@
                             ?>
                         <li>
                             <button>
-                                <a href="#"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorenas/links/familia3.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -154,7 +154,7 @@
             
             <section>
                 <h2>
-                    <a href="#">
+                    <a href="http://192.168.1.95/LasTresMorenas/links/familia7.php">
                         Anclas
                     </a>
                 </h2>
@@ -195,7 +195,7 @@
                         ?>
                         <li>
                             <button>
-                                <a href="#"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorenas/links/familia7.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -218,7 +218,7 @@
                                 ?>
                                     <!-- <li style="background-image: url(resource/ <?php $foto ?>);"> -->
                                     <li>
-                                        <a href="links/rubros.php?codigo=<?php echo $row['codigo']; ?>">
+                                        <a href="links/familia<?php echo $row['codigo']; ?>.php">
                                             <?php echo $descripcion ?>
                                         </a>
                                     </li>
