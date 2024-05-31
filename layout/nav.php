@@ -60,7 +60,7 @@
                         
                                         ?>
                                             <li>
-                                                <a href="#"> <?php echo $descripcion ?></a>
+                                                <a href="http://192.168.1.95/LasTresMorenas/links/familia<?php echo $row['codigo'];?>.php"> <?php echo $descripcion ?></a>
                                             </li>
                                         <?php
                                     }
