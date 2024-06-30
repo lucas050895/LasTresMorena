@@ -30,7 +30,6 @@
         ?>
 
 
-
         <div id="ofertas">
             <div class="slider-contenedor">
                 <?php
@@ -39,7 +38,7 @@
                         ?>
                             <div class="contenido-slider">
                                 <div>
-                                    <img src="resource/<?php echo $fila['foto']; ?>" alt="<?php echo $fila['descripcion']; ?>">
+                                    <img src="resource/img/articulos/<?php echo $fila['codigo']; ?>.jpg" alt="<?php echo $fila['descripcion']; ?>">
                                 </div>
                                 <div>
                                     <a href="links/producto.php?codigo=<?php echo $fila['codigo']; ?>"> <?php echo  $fila['descripcion'] ?></a>
@@ -54,7 +53,7 @@
         <div id="productos">
             <section>
                 <h2>
-                    <a href="http://192.168.1.95/LasTresMorenas/links/familia1.php">
+                    <a href="http://192.168.1.95/LasTresMorena/links/cañas.php">
                         Cañas
                     </a>
                 </h2>
@@ -66,7 +65,11 @@
                     <ul class="scroll-caña">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT LEFT (descripcion, 15) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'caña%' LIMIT 10";
+                                $consultation = "SELECT LEFT (descripcion, 15) AS descripcion,
+                                                        precioventaunidades1,
+                                                        foto,
+                                                        codigo 
+                                                FROM articulos WHERE descripcion LIKE 'caña%' LIMIT 10";
                                 $resultado = mysqli_query($conexion,$consultation);
                         
                                 if($resultado){
@@ -95,7 +98,7 @@
                         ?>
                         <li>
                             <button>
-                                <a href="http://192.168.1.95/LasTresMorenas/links/familia1.php"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorena/links/cañas.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -104,7 +107,7 @@
             
             <section>
                 <h2>
-                    <a href="http://192.168.1.95/LasTresMorenas/links/familia3.php">
+                    <a href="http://192.168.1.95/LasTresMorena/links/reel.php">
                         Reel
                     </a>
                 </h2>
@@ -145,7 +148,7 @@
                             ?>
                         <li>
                             <button>
-                                <a href="http://192.168.1.95/LasTresMorenas/links/familia3.php"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorena/links/reel.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -154,7 +157,7 @@
             
             <section>
                 <h2>
-                    <a href="http://192.168.1.95/LasTresMorenas/links/familia7.php">
+                    <a href="http://192.168.1.95/LasTresMorena/links/anclas.php">
                         Anclas
                     </a>
                 </h2>
@@ -166,7 +169,7 @@
                     <ul class="scroll-ancla">
                         <?php
                             if($conexion) {
-                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'ancla%'LIMIT 10";
+                                $consultation = "SELECT LEFT (descripcion, 18) AS descripcion, precioventaunidades1, foto, codigo FROM articulos WHERE descripcion LIKE 'ancla%' LIMIT 10";
                                 $resultado = mysqli_query($conexion,$consultation);
                                 
                                 if($resultado){
@@ -195,7 +198,7 @@
                         ?>
                         <li>
                             <button>
-                                <a href="http://192.168.1.95/LasTresMorenas/links/familia7.php"> Ver mas</a>
+                                <a href="http://192.168.1.95/LasTresMorena/links/anclas.php"> Ver mas</a>
                             </button>
                         </li>
                     </ul>
@@ -216,12 +219,11 @@
                                 $descripcion = $row['descripcion'];
                                 
                                 ?>
-                                    <!-- <li style="background-image: url(resource/ <?php $foto ?>);"> -->
-                                    <li>
-                                        <a href="links/familia<?php echo $row['codigo']; ?>.php">
+                                    <a href="links/familia<?php echo $row['codigo']; ?>.php" style="background-image: url(resource/img/rubros/<?php echo $descripcion ?>.png);">
+                                        <li>
                                             <?php echo $descripcion ?>
-                                        </a>
-                                    </li>
+                                        </li>
+                                    </a>
                                 <?php
                             }
                         }
@@ -233,48 +235,48 @@
         <div id="publicidad">
             <div class="move">
                 <div class="box">
-                    <img src="resource/1.png" alt="">
+                    <img src="resource/img/proveedor/1.png" alt="1">
                 </div>
                 <div class="box">
-                    <img src="resource/2.png" alt="">
+                    <img src="resource/img/proveedor/2.png" alt="2">
                 </div>
                 <div class="box">
-                    <img src="resource/3.png" alt="">
+                    <img src="resource/img/proveedor/3.png" alt="3">
                 </div>
                 <div class="box">
-                    <img src="resource/4.png" alt="">
+                    <img src="resource/img/proveedor/4.png" alt="4">
                 </div>
                 <div class="box">
-                    <img src="resource/5.png" alt="">
+                    <img src="resource/img/proveedor/5.png" alt="5">
                 </div>
                 <div class="box">
-                    <img src="resource/6.png" alt="">
+                    <img src="resource/img/proveedor/6.png" alt="6">
                 </div>
                 <div class="box">
-                    <img src="resource/7.png" alt="">
+                    <img src="resource/img/proveedor/7.png" alt="7">
                 </div>
 
                 <!-- 2da vuelta -->
                 <div class="box">
-                    <img src="resource/1.png" alt="">
+                    <img src="resource/img/proveedor/1.png" alt="1">
                 </div>
                 <div class="box">
-                    <img src="resource/2.png" alt="">
+                    <img src="resource/img/proveedor/2.png" alt="2">
                 </div>
                 <div class="box">
-                    <img src="resource/3.png" alt="">
+                    <img src="resource/img/proveedor/3.png" alt="3">
                 </div>
                 <div class="box">
-                    <img src="resource/4.png" alt="">
+                    <img src="resource/img/proveedor/4.png" alt="4">
                 </div>
                 <div class="box">
-                    <img src="resource/5.png" alt="">
+                    <img src="resource/img/proveedor/5.png" alt="5">
                 </div>
                 <div class="box">
-                    <img src="resource/6.png" alt="">
+                    <img src="resource/img/proveedor/6.png" alt="6">
                 </div>
                 <div class="box">
-                    <img src="resource/7.png" alt="">
+                    <img src="resource/img/proveedor/7.png" alt="7">
                 </div>
             </div>
         </div>
