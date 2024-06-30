@@ -7,7 +7,7 @@
         <div class="enlaces uno" id="enlaces">
             <ul>
                 <li>
-                    <a href="http://192.168.1.95/LasTresMorenas/">
+                    <a href="http://192.168.1.95/LasTresMorena/">
                         <i class="fas fa-home"></i>Inicio
                     </a>
                 </li>
@@ -19,14 +19,14 @@
                 </li>
 
                 <li>
-                    <a href="http://192.168.1.95/LasTresMorenas/links/busqueda.php">
+                    <a href="http://192.168.1.95/LasTresMorena/links/busqueda.php">
                         <i class="fas fa-search"></i>Busqueda
                     </a>
                 </li>
 
                 <li>
                     <a href="#">
-                        <i class="far fa-address-card"></i>Nosotros
+                        <i class="far fa-address-card"></i>Acerca de
                     </a>
                 </li>
             </ul>
@@ -35,7 +35,7 @@
         <div class="desktop">
             <ul>
                 <li>
-                    <a href="http://192.168.1.95/LasTresMorenas/">
+                    <a href="http://192.168.1.95/LasTresMorena/">
                         <i class="fas fa-home"></i>
                         <span>Inicio</span>
                     </a>
@@ -60,7 +60,7 @@
                         
                                         ?>
                                             <li>
-                                                <a href="http://192.168.1.95/LasTresMorenas/links/familia<?php echo $row['codigo'];?>.php"> <?php echo $descripcion ?></a>
+                                                <a href="http://192.168.1.95/LasTresMorena/links/familia<?php echo $row['codigo'];?>.php"> <?php echo $descripcion ?></a>
                                             </li>
                                         <?php
                                     }
@@ -71,7 +71,7 @@
                 </li>
 
                 <li>
-                    <a href="http://192.168.1.95/LasTresMorenas/links/busqueda.php">
+                    <a href="http://192.168.1.95/LasTresMorena/links/busqueda.php">
                         <i class="fas fa-search"></i>
                         <span>Busqueda</span>
                     </a>
@@ -80,7 +80,7 @@
                 <li>
                     <a href="#">
                         <i class="far fa-address-card"></i>
-                        <span>Nosotros</span>
+                        <span>Acerca de</span>
                     </a>
                 </li>
             </ul>
@@ -89,7 +89,7 @@
 
     <div>
         <h1>
-            <a href="http://192.168.1.95/LasTresMorenas/">
+            <a href="http://192.168.1.95/LasTresMorena/">
                 Las Tres Morena
             </a>
         </h1>
