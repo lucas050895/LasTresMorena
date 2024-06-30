@@ -45,7 +45,7 @@
         <div>
             <!-- FOTO -->
             <div>
-                <img src="<?php echo $fila[230]?>" alt="<?php echo $fila[1]?>">
+                <img src="../resource/articulos/<?php echo $fila[0] ?>.jpg" alt="<?php echo $fila[1]?>">
             </div>
 
             <div>
