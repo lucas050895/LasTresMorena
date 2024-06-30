@@ -21,7 +21,6 @@
 }
 
 
-
 /*HEADER*/
 header{
     width: 100%;
@@ -132,42 +131,51 @@ header > div > h1 > a {
 /*PIE DE PAGINA*/
 footer{
     width: 100%;
-    height: 200px;
+    height: auto;
+    background: var(--color-four);
 }
-footer > .redes{
-    width: 100%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+footer > div > div{
+    margin: 1rem auto;
 }
-footer > .redes > p{
+footer > div > div > p{
     width: 90%;
-    padding-bottom: .2em;
+    max-width: 400px;
+    margin: 0 auto 1rem;
     font-size: 2rem;
     text-align: center;
     border-bottom: 2px solid black;
 }
-footer > .redes > div{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+footer > div > div > ul{
+    padding-left: 2rem;
 }
-footer > .redes > div > a{
+footer > div > div > ul li{
+    margin: 1rem auto .2rem;
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+footer > div > div > ul > a{
+    padding-left: 2rem;
+}
+footer > div > div > ul a{
     text-decoration: none;
+    font-size: 1.5rem;
 }
-footer > .redes div > a i{
-    margin: 0 .5em;
-    font-size: 3em;
-}
+
+
+
 /*COLOR DE CADA ICONO DE CONTACTO*/
+footer div:nth-child(1) i{
+    font-size: 1.5rem;
+    padding-left: .5rem;
+}
 .fa-facebook{
     color: #0000ff;
 }
 .fa-instagram-square{
     color: #bc1888;
+
 }
 .fa-phone-alt{
     color: #5270FF ;
@@ -175,23 +183,31 @@ footer > .redes div > a i{
 .fa-envelope{
     color: #E04005
 }
+.fa-map-marker-alt{
+    color:#B31412;
+}
 /*DERECHOS RESERVADOS*/
 footer > div:nth-child(2){
     width: 100%;
-    height: 30%;
+    padding: 1rem;
+    background-color: var(--color-two);
+}
+footer > div > section *{
+    color: var(--color-four);
+    font-size: 1.3rem;
+}
+footer > div:nth-child(2) > section{
+    text-align: center;
+}
+footer > div:nth-child(2) > section > h3{
+    height: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 1.2em;
-    background-color: black;
+    margin: 1rem auto .5rem;
 }
-footer > div:nth-child(2) > h2,
-footer > div:nth-child(2) > p,
-footer > div:nth-child(2) > p > i{
-    color: white;
+footer > div:nth-child(2) > section > h3 > a{
+    margin-left: .5rem;
 }
-
 
 
 /*ADAPTACIONES A DISPOSITIVOS*/
@@ -328,10 +344,24 @@ footer > div:nth-child(2) > p > i{
         color: var(--color-six);
     }
 
+    footer > div:nth-child(1){
+        display: flex;
+        flex-direction: row;
+    }
+    footer > div > div{
+        width: 350px;
+    }
+
 }
 
 @media screen and (min-width: 920px) {
     *{
         font-size: 16px;
+    }
+    footer > div > div{
+        width: 400px;
+    }
+    footer > div > div ul li a{
+        margin: 0 auto 1rem;
     }
 }

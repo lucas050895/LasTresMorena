@@ -1,3 +1,4 @@
 bd/Stock.mdb
+bd/migration.mjf
 
 Se ignora la BD en Access, porque es pesada.
