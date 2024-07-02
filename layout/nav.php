@@ -16,6 +16,27 @@
                     <a href="#">
                         <i class="fas fa-list"></i>Rubros
                     </a>
+                    <ul>
+                        <?php
+                            if($conexion) {
+                                $consultation = "SELECT *
+                                                    FROM familias";
+                                $resultado = mysqli_query($conexion,$consultation);
+                        
+                                if($resultado){
+                                    while($row = $resultado->fetch_array()){
+                                        $descripcion = $row['descripcion'];
+                        
+                                        ?>
+                                            <li>
+                                                <a href="http://192.168.1.95/LasTresMorena/links/familia<?php echo $row['codigo'];?>.php"> <?php echo $descripcion ?></a>
+                                            </li>
+                                        <?php
+                                    }
+                                }
+                            }
+                        ?>
+                    </ul>
                 </li>
 
                 <li>
