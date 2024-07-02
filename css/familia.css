@@ -152,7 +152,16 @@ main > div:nth-child(2) > ul > li > a > div > p:nth-child(2)::before{
 
 
 
-
+/*LI DE NUMERACION DE PAGINA*/
+.num{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.num > p{
+    font-size: 1.5rem;
+}
 
 
 
