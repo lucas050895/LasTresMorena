@@ -90,7 +90,7 @@
                     <li><a href="?pagina=<?php echo $pagina-1 ?>"><i class="fas fa-chevron-left"></i></a></li>
                 <?php
                     }
-                    for ($i=1; $i <= $total_paginas; $i++) { 
+                    for($i=max(1, min($desde-3,$total_paginas-7)); $i < max(8, min($desde+4,$total_paginas+1)); $i++){ 
                         if($i == $pagina){
                             echo "<li class='pageSelected'>$i</li>";
                         }else{

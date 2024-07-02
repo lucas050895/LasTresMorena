@@ -39,7 +39,7 @@
             $result_register = mysqli_fetch_array($sql_registe);
             $total_registro = $result_register['total_registro'];
 
-            $por_pagina = 30;
+            $por_pagina = 50;
 
             if(empty($_GET['pagina'])){
                 $pagina = 1;
@@ -90,13 +90,17 @@
                     <li><a href="?pagina=<?php echo $pagina-1 ?>"><i class="fas fa-chevron-left"></i></a></li>
                 <?php
                     }
-                    for ($i=1; $i <= $total_paginas; $i++) { 
-                        if($i == $pagina){
-                            echo "<li class='pageSelected'>$i</li>";
-                        }else{
-                        echo "<li><a href='?pagina=$i'>$i</a></li>";
-                        }
-                    }
+                ?>
+
+                <li class="num">
+                    <p><?php echo $pagina; ?> </p> 
+
+                    <p>/</p>
+
+                    <p> <?php echo $total_paginas; ?> </p>
+                </li>
+
+                <?php
 
                     if($pagina != $total_paginas){    
                 ?>

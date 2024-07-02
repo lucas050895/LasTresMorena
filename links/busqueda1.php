@@ -103,13 +103,25 @@
                         <li><a href="?pagina=<?php echo $pagina-1 ?><?php echo $busqueda; ?>"><</a></li>
                     <?php
                         }
-                        for ($i=1; $i <= $total_paginas; $i++) { 
+                    ?>
+
+                        <li class="num">
+                            <p><?php echo $pagina; ?> </p> 
+        
+                            <p>/</p>
+        
+                            <p> <?php echo $total_paginas; ?> </p>
+                        </li>
+
+                        <!-- for ($i=1; $i <= $total_paginas; $i++) { 
                             if($i == $pagina){
                                 echo "<li class='pageSelected'>$i</li>";
                             }else{
                             echo "<li><a href='?pagina=$i&busqueda=$busqueda'>$i</a></li>";
                             }
-                        }
+                        } -->
+    
+                    <?php
 
                         if($pagina != $total_paginas){    
                     ?>
