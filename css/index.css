@@ -4,43 +4,83 @@
 /*SECCION DE SLIDER DE ARTICULOS*/
 main > #ofertas{
     width: 100%;
+    height: calc(100vh - 130px);
+    margin-top: 80px;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
     overflow: hidden;
+    background-color: var(--color-one);
 }
-.slider-contenedor{
+.container img {
     width: 100%;
-    display: flex;
+    height: 100%;
+    object-fit:cover;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: fade 1s;
 }
-.contenido-slider{
-    width: 100%;
-    height: 60vh;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-shrink: 0;
-    background-color: var(--color-four);
+.container .arrow {
+    z-index: 10;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
-.contenido-slider > div:nth-child(1){
-    width: 100%;
-    height: 80%;
+.container > .arrow > i{
+    font-size: 3rem;
+    color: var(--color-one);
+}
+.container .arrow-left {
+    left: 2%;
+}
+.container .arrow-right {
+    right: 2%;
+}
+.container .dots {
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    position: absolute;
+    margin: auto;
+    top: auto;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    z-index: 5;
 }
-.contenido-slider > div:nth-child(2){
-    width: 100%;
-    height: 20%;
-    background-color: var(--color-three);
-}
-.contenido-slider a{
-    height: 80px;
-    display: flex;
+.container .dots .dot {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-content: center;
     justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #c3c3c3;
+}
+.container .dots .dot i{
+    color: var(--color-one);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -297,8 +337,10 @@ body > a > i{
 
 
     /*OFERTAS*/
-    #ofertas{
-        margin-top: 150px;
+    main > #ofertas{
+        width: 100%;
+        height: calc(100vh - 200px);
+        margin-top: 200px;
     }
 
     /*PUBLICIDAD*/

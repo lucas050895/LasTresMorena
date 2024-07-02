@@ -31,22 +31,48 @@
 
 
         <div id="ofertas">
-            <div class="slider-contenedor">
+            <div class="container">
+                <div class="arrow arrow-left">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </div>
+
                 <?php
-                    $resultado = $conexion -> query("SELECT * FROM articulos GROUP BY (proveedor) ORDER BY codigo LIMIT 10")or die($conexion -> error);
+                    $resultado = $conexion -> query("SELECT * FROM articulos GROUP BY (proveedor) ORDER BY codigo LIMIT 7")or die($conexion -> error);
                     while($fila = mysqli_fetch_array($resultado)){
                         ?>
-                            <div class="contenido-slider">
-                                <div>
-                                    <img src="resource/img/articulos/<?php echo $fila['codigo']; ?>.jpg" alt="<?php echo $fila['descripcion']; ?>">
-                                </div>
-                                <div>
-                                    <a href="links/producto.php?codigo=<?php echo $fila['codigo']; ?>"> <?php echo  $fila['descripcion'] ?></a>
-                                </div>
-                            </div>
+                            <img src="resource/img/articulos/<?php echo $fila['codigo']; ?>.jpg" alt="<?php echo $fila['descripcion']; ?>">
                         <?php
                     }
                 ?>
+
+
+                <div class="arrow arrow-right">
+                    <i class="fas fa-chevron-circle-right"></i>
+                </div>
+
+                <div class="dots">
+                    <div class="dot">
+                        <i class="far fa-dot-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-dot-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-circle"></i>
+                    </div>
+                    <div class="dot">
+                        <i class="far fa-circle"></i>
+                    </div>
+                </div>
             </div>
         </div>
         
